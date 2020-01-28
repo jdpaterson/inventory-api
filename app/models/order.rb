@@ -1,3 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :inventory
+  has_many :inventory_orders
+  has_many :inventories, through: :inventory_orders
 end

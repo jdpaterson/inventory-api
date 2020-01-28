@@ -1,6 +1,7 @@
 class Inventory < ApplicationRecord
   attr_reader :quantity_available
-  has_many :orders
+  has_many :inventory_orders
+  has_many :orders, through: :inventory_orders
   has_many :supplies
 
   def attributes
@@ -8,7 +9,7 @@ class Inventory < ApplicationRecord
   end
 
   def quantity_available
-    supplies.sum(:supplied_amount) - orders.sum(:order_quantity)
+    supplies.sum(:supplied_amount) - order_inventories.sum(:order_quantity)
   end
 
 end
