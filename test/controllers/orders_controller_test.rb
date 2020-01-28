@@ -12,7 +12,14 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order" do
     assert_difference('Order.count') do
-      post orders_url, params: { order: { customer_email_address: @order.customer_email_address, date_order_placed: @order.date_order_placed, order_status: @order.order_status } }, as: :json
+      post orders_url, params: {
+        order: {
+          customer_email_address: @order.customer_email_address,
+          date_order_placed: @order.date_order_placed,
+          order_status: @order.order_status,
+          inventory_id: @order.inventory_id
+        }
+      }, as: :json
     end
 
     assert_response 201
