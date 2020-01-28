@@ -50,7 +50,10 @@ class OrdersController < ApplicationController
                                     :date_order_placed,
                                     :inventory_id,
                                     :order_status,
-                                    :order_quantity
-                                    )
+                                    inventory_orders_attributes: [
+                                      :inventory_id,
+                                      :order_quantity
+                                    ]
+                                   )
     end
 end
