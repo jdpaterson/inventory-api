@@ -1,11 +1,8 @@
-one:
-  customer_email_address: MyString
-  date_order_placed: 2020-01-27 19:10:32
-  order_status: 1
-  inventory: two
+basic_order_1:
+  customer_email_address: test1@email.com
 
-two:
-  customer_email_address: MyString
-  date_order_placed: 2020-01-27 19:10:32
-  order_status: 1
-  inventory: two
+basic_order_2:
+  customer_email_address: test1@email.com
+
+empty_order_1:
+  customer_email_address: test1@email.com

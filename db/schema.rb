@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_031859) do
+ActiveRecord::Schema.define(version: 2020_01_28_054042) do
 
   create_table "inventories", force: :cascade do |t|
     t.string "name"
@@ -20,15 +20,22 @@ ActiveRecord::Schema.define(version: 2020_01_28_031859) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "inventory_orders", force: :cascade do |t|
+    t.integer "inventory_id", null: false
+    t.integer "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "order_quantity"
+    t.index ["inventory_id"], name: "index_inventory_orders_on_inventory_id"
+    t.index ["order_id"], name: "index_inventory_orders_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "customer_email_address"
     t.datetime "date_order_placed"
     t.integer "order_status"
-    t.integer "order_quantity"
-    t.integer "inventory_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["inventory_id"], name: "index_orders_on_inventory_id"
   end
 
   create_table "supplies", force: :cascade do |t|
@@ -39,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_031859) do
     t.index ["inventory_id"], name: "index_supplies_on_inventory_id"
   end
 
-  add_foreign_key "orders", "inventories"
+  add_foreign_key "inventory_orders", "inventories"
+  add_foreign_key "inventory_orders", "orders"
   add_foreign_key "supplies", "inventories"
 end

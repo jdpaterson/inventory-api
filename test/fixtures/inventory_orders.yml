@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  inventory: two
-  order: one
-  order_amount: 10
+  inventory: high_inventory
+  order: basic_order_1
+  order_quantity: 10
 
 two:
-  inventory: two
-  order: two
-  order_amount: 25
+  inventory: high_inventory
+  order: basic_order_2
+  order_quantity: 25

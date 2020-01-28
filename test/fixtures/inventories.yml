@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  price: 1.5
+low_inventory:
+  name: LowInventory
+  description: LowInventoryDescription
+  price: 10
 
-two:
-  name: MyString
-  description: MyText
-  price: 1.5
+high_inventory:
+  name: HighInventory
+  description: HighInventoryDescription
+  price: 100
+
+empty_inventory:
+  name: EmptyInventory
+  description: EmptyInventoryDescription
+  price: 10

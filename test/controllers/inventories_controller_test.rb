@@ -2,7 +2,8 @@ require 'test_helper'
 
 class InventoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @inventory = inventories(:one)
+    @empty_inventory = inventories(:empty_inventory)
+    @low_inventory = inventories(:low_inventory)
   end
 
   test "should get index" do
@@ -12,25 +13,37 @@ class InventoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create inventory" do
     assert_difference('Inventory.count') do
-      post inventories_url, params: { inventory: { description: @inventory.description, name: @inventory.name, price: @inventory.price } }, as: :json
+      post inventories_url, params: {
+        inventory: {
+          description: @empty_inventory.description,
+          name: @empty_inventory.name,
+          price: @empty_inventory.price
+        }
+      }, as: :json
     end
 
     assert_response 201
   end
 
   test "should show inventory" do
-    get inventory_url(@inventory), as: :json
+    get inventory_url(@low_inventory), as: :json
     assert_response :success
   end
 
   test "should update inventory" do
-    patch inventory_url(@inventory), params: { inventory: { description: @inventory.description, name: @inventory.name, price: @inventory.price } }, as: :json
+    patch inventory_url(@empty_inventory), params: {
+      inventory: {
+        description: @empty_inventory.description,
+        name: @empty_inventory.name,
+        price: @empty_inventory.price
+      }
+    }, as: :json
     assert_response 200
   end
 
   test "should destroy inventory" do
     assert_difference('Inventory.count', -1) do
-      delete inventory_url(@inventory), as: :json
+      delete inventory_url(@empty_inventory), as: :json
     end
 
     assert_response 204
