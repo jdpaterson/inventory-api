@@ -9,7 +9,7 @@ class Inventory < ApplicationRecord
   end
 
   def quantity_available
-    supplies.sum(:supplied_amount) - order_inventories.sum(:order_quantity)
+    supplies.sum(:supplied_amount) - inventory_orders.active.sum(:order_quantity)
   end
 
 end
