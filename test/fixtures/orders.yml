@@ -1,5 +1,3 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   customer_email_address: MyString
   date_order_placed: 2020-01-27 19:10:32
@@ -10,6 +8,6 @@ one:
 two:
   customer_email_address: MyString
   date_order_placed: 2020-01-27 19:10:32
-  order_quantity: 1
+  order_quantity: 25
   order_status: 1
   inventory: two

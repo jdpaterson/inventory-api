@@ -6,4 +6,4 @@ one:
 
 two:
   inventory: two
-  supplied_amount: 1
+  supplied_amount: 100

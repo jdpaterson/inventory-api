@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_031859) do
     t.string "customer_email_address"
     t.datetime "date_order_placed"
     t.integer "order_status"
-    t.integer "order_amount"
+    t.integer "order_quantity"
     t.integer "inventory_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
