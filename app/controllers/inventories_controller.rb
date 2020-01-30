@@ -46,6 +46,12 @@ class InventoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def inventory_params
-      params.require(:inventory).permit(:name, :description, :price)
+      params.require(:inventory).permit(:name,
+                                        :description,
+                                        :price,
+                                        supplies_attributes: [
+                                          :supplied_amount
+                                        ]
+                                      )
     end
 end
