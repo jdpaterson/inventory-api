@@ -1,6 +1,6 @@
 # README
 
-Hi, thanks for having a look at this inventory-api built on Ruby on Rails 6.0.
+Hi, thanks for having a look at this inventory-api built on Ruby on Rails 6.
 This API supports CRUD operations for Order and Inventory REST endpoints.
 
 Installation instructions and endpoint notes are below.
