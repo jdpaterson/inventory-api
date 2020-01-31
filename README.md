@@ -23,8 +23,8 @@ Run the following from app root directory:
 - `bundle exec rails db:migrate`
 - `bundle exec rails db:seed`
 
-To run the server: `rails s`
-To run tests: `rails test`
+To run the server: `bundle exec rails s`
+To run tests: `bundle exec rails test`
 
 Make requests to: `http://localhost:3000/`
 
