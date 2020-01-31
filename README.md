@@ -19,9 +19,9 @@ Steps to run:
 Run the following from app root directory:
 
 - `bundle install`
-- `rails db:create`
-- `rails db:migrate`
-- `rails db:seed`
+- `bundle exec rails db:create`
+- `bundle exec rails db:migrate`
+- `bundle exec rails db:seed`
 
 To run the server: `rails s`
 To run tests: `rails test`
